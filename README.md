@@ -1,2 +1,3 @@
 # docker_ti
-docket telegraf plus influx
+How to setup Docker containers with Influx and Telegraf
+```docker-compose up```
