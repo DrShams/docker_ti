@@ -5,7 +5,7 @@ services:
     container_name: telegraf
     volumes:
     - $PWD/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-    - /:/hostfs:ro
+    #- /:/hostfs:ro
     environment:
     - HOST_ETC=/hostfs/etc
     - HOST_PROC=/hostfs/proc
@@ -38,12 +38,12 @@ services:
     ports:
     - '8086:8086'
     volumes:
-    - $PWD/data:/var/lib/influxdb2
-    - $PWD/config:/etc/influxdb2
-    - $PWD/scripts:/docker-entrypoint-initdb.d
+    #- $PWD/data:/var/lib/influxdb2
+    #- $PWD/config:/etc/influxdb2
+    - $PWD/scripts/setup-v1.sh:/docker-entrypoint-initdb.d
     networks:
     - influxdb-telegraf-net
-networks: 
+networks:
   influxdb-telegraf-net:
     name: influxdb-telegraf-net
     driver: bridge
