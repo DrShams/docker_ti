@@ -40,7 +40,7 @@ services:
     volumes:
     - $PWD/data:/var/lib/influxdb2
     - $PWD/config:/etc/influxdb2
-    - $PWD/scripts:/docker-entrypoint-initdb.d
+    #- $PWD/scripts:/docker-entrypoint-initdb.d
     networks:
     - influxdb-telegraf-net
 networks:
