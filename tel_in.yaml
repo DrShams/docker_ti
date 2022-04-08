@@ -3,9 +3,9 @@ services:
   telegraf:
     image: telegraf
     container_name: telegraf
-    volumes:
-    - $PWD/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-    - /:/hostfs:ro
+    #volumes:
+    #- $PWD/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    #- /:/hostfs:ro
     environment:
     - HOST_ETC=/hostfs/etc
     - HOST_PROC=/hostfs/proc
@@ -37,9 +37,9 @@ services:
     - V1_AUTH_PASSWORD=PASSWORD
     ports:
     - '8086:8086'
-    volumes:
-    - $PWD/data:/var/lib/influxdb2
-    - $PWD/config:/etc/influxdb2
+    #volumes:
+    #- $PWD/data:/var/lib/influxdb2
+    #- $PWD/config:/etc/influxdb2
     #- $PWD/scripts:/docker-entrypoint-initdb.d
     networks:
     - influxdb-telegraf-net
